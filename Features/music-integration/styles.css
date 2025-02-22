@@ -1,0 +1,170 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: url('../../img/669191-final.png') no-repeat center center/cover;
+   
+    min-height: 100vh; /* Ensures background covers full height */
+    color: white;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    background-size: cover;  /* Image full screen cover karegi */
+    background-position: center; /* Image center me set hogi */
+    background-attachment: fixed; /* Background scroll na ho */
+    background-repeat: no-repeat; /* Image repeat na ho */
+}
+
+
+.logo-container {
+    display: flex;
+    /* background-color: yellow; */
+    backdrop-filter: blur(5px);
+    align-items: center;
+    justify-content: flex-start;
+    position: fixed;
+    padding: 10px;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+.site-name {
+    font-family: "Poppins", serif;
+    font-weight: 600;
+    text-decoration: underline;
+    text-shadow: 2px 2px #2e2929;
+    font-style: normal;
+    font-size: 28px;
+    color: #fff;
+}
+
+.logo {
+    width: 60px;
+    height: auto;
+    margin-right: 10px;
+
+}
+
+.container {
+    backdrop-filter: blur(10px);
+    padding: 20px;
+    margin: 20px auto;
+    width: 90%;
+    max-width: 600px;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    margin-top: 130px;
+}
+
+.search-box {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    
+}
+.inputsound{
+    font-size: 14px;
+}
+#searchInput {
+    width: 70%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+}
+
+#searchBtn {
+    padding: 10px 15px;
+    border: none;
+    background: #ff9800;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#results {
+    max-height: 300px;
+    overflow-y: auto;
+    text-align: left;
+    padding: 10px;
+    scrollbar-width: thin;
+    scrollbar-color: #ff9800 rgba(255, 255, 255, 0.1);
+}
+
+/* Custom scrollbar */
+#results::-webkit-scrollbar {
+    width: 6px;
+}
+
+#results::-webkit-scrollbar-thumb {
+    background: #ff9800;
+    border-radius: 10px;
+}
+
+.result {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+    margin: 5px 0;
+}
+
+.playBtn {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+#musicPlayer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
+#progressContainer {
+    width: 100%;
+    height: 5px;
+    background: gray;
+    cursor: pointer;
+    position: relative;
+}
+
+#progressBar {
+    height: 5px;
+    background: #ff9800;
+    width: 0%;
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.controls button, .controls input {
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+/* Timer Styling */
+#timeRemaining {
+    font-size: 16px;
+    color: white;
+    margin-left: 10px;
+}

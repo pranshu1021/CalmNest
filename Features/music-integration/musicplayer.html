@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relaxing Nature Sounds</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="logo-container">
+        <a href="../../index.html"><img src="../../img/Logo.png" alt="logo" class="logo"></a>
+        <a href="../../index.html"><h1 class="site-name">CalmNest</h1></a>
+    </div>
+    <div class="container">
+        <h1>🌿 Relaxing Nature Sounds 🎵</h1>
+        <div class="search-box">
+            <input class="inputsound" type="text" id="searchInput" placeholder="Search for nature sounds...">
+            <button id="searchBtn">🔍 Search</button>
+        </div>
+        <div id="results"></div>
+    </div>
+
+    <div id="musicPlayer">
+        <div id="progressContainer">
+            <div id="progressBar"></div>
+        </div>
+        <div class="controls">
+            <button id="playPauseBtn">▶️</button>
+            <input type="range" id="volumeControl" min="0" max="1" step="0.1" value="1">
+            <button id="muteBtn">🔇</button>
+            <button id="loopBtn">🔁</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
