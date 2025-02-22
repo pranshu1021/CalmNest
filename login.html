@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CalmNest: Stay Cool</title>
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <style>
+        body {
+            background: url(/img/background-image-loginpage.jpg) no-repeat;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="logo-container">
+        <a href="index.html"><img src="/img/Logo.png" alt="logo" class="logo"></a>
+        <a href="index.html"><h1 class="site-name">CalmNest</h1></a>
+    </div>
+    <div class="wrapper">
+        <form action="">
+            <h1>Login</h1>
+            <div class="input-box">
+                <input type="text" placeholder="Username" required>
+                <i class='bx bxs-user'></i>
+            </div>
+            <div class="input-box">
+                <input type="password" placeholder="Password" required>
+                <i class='bx bxs-lock-alt'></i>
+            </div>
+
+            <div class="remember-forgot">
+                <label><input type="checkbox"> Remember me</label>
+                <a href="#">Forgot password?</a>
+            </div>
+            <button type="submit" class="btn">Login</button>
+
+            <div class="register-link">
+                <p>Don't have an account?<a href="register.html">Register</a></p>
+            </div>
+
+
+        </form>
+    </div>
+</body>
+
+</html>

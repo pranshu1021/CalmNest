@@ -1,0 +1,438 @@
+@import url("https//fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Quicksand:wght@300..700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", serif;
+}
+
+/* ALL CSS FOR INDEX.html */
+
+.card {
+    backdrop-filter: blur(5px);
+    /* animation-name: enlarge-card;
+    animation-duration: 3s;
+    animation-play-state: paused;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards; */
+    transition: transform 0.3s ease-in-out;
+    z-index: 7;
+}
+
+.card:hover {
+    /* animation-play-state: running; */
+    transform: scale(1.12);
+
+}
+
+.starting-content {
+    /*     
+    margin: 60px auto 50px auto;  Center horizontally */
+    margin: 0 auto 50px auto;
+    display: flex;
+    margin-left: 3vw;
+    margin-top: 5vw;
+    margin-right: 3vw;
+    max-width: 1500px;
+    padding: 50px 50px;
+    /* background-color: aqua; */
+    border-radius: 10px;
+    gap: 55px;
+    backdrop-filter: blur(16px);
+    justify-content: center;
+    text-align: center;
+}
+
+.Instructions h2 {
+    font-size: 50px;
+    font-family: "Poppins", serif;
+    font-weight: 700;
+    color: white;
+    justify-content: center;
+    text-align: center;
+    
+}
+
+.Instructions {
+    /* background-color: yellow; */
+    display: block;
+    justify-content: center;
+    text-align: center;
+    padding-left: 70px;
+
+}
+
+.starting-content-img {
+    /* background-color: bisque; */
+    display: flex;
+    position: relative;
+
+}
+
+.starting-img {
+    width: 350px;
+    height: 382px;
+    object-fit: fill;
+
+}
+
+.gotoaccounts {
+    display: flex;
+    width: 90%;
+    /* Makes it flexible */
+    max-width: 900px;
+    /* Prevents it from being too wide */
+    margin: 0 auto 50px auto;
+    /* Center horizontally */
+    color: white;
+    backdrop-filter: blur(30px);
+    border-radius: 7px;
+    padding: 20px;
+    margin-top: 70px;
+    /* Some padding for better spacing */
+}
+
+/* 🔹 Button Styling (Responsive Font & Padding) */
+.getting-started-btn {
+    margin-top: 45px;
+    border-radius: 4px;
+    border: none;
+    font-size: clamp(18px, 4vw, 30px);
+
+    font-family: "Poppins", serif;
+    font-weight: 800;
+    background: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    transition: all 0.3s ease-in-out;
+    animation-duration: 3s;
+    animation-name: enlargee;
+
+}
+
+@keyframes enlargee {
+    0% {}
+
+    100% {
+        scale: 1.2;
+    }
+}
+
+.getting-started-btn:hover {
+    text-decoration: underline;
+    cursor: pointer;
+
+
+}
+
+.next-content {
+    /* background-color: pink; */
+    width: 500px;
+    margin: 30px;
+    font-size: 20px;
+}
+
+.pstt {
+    position: absolute;
+    top: 15;
+    right: 0;
+}
+
+.pstt-img {
+    width: 14vw;
+    height: 60vh;
+}
+
+body {
+    /* background-image: url(/img/home-page-image.jpg )no-repeat; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+
+    background-size: cover;
+    background-position: center;
+}
+
+.card-image {
+    width: 400px;
+    height: 300px;
+}
+
+/* ALL CSS FOR LOGIN.html */
+.logo-container {
+    display: flex;
+    /* background-color: yellow; */
+    backdrop-filter: blur(5px);
+    align-items: center;
+    justify-content: flex-start;
+    position: fixed;
+    padding: 10px;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.site-name {
+    font-family: "Poppins", serif;
+    font-weight: 600;
+    text-decoration: underline;
+    text-shadow: 2px 2px #2e2929;
+    font-style: normal;
+    font-size: 28px;
+    color: #fff;
+}
+
+.wrapper-homepage h3 {
+    font-family: "Poppins", serif;
+    font-size: 20px;
+}
+
+.logo {
+    width: 60px;
+    height: auto;
+    margin-right: 10px;
+
+}
+
+.wrapper-homepage {
+    /* background-color: aqua; */
+    margin-top: 70px;
+}
+
+.card-content {
+    margin-left: 8px;
+    height: 140px;
+    backdrop-filter: blur(100%);
+    /* background-color: aqua; */
+    color: #fff;
+    font-size: 18px;
+}
+
+.wrapper {
+    width: 420px;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, .2);
+    color: white;
+    backdrop-filter: blur(12px);
+    border-radius: 10px;
+    padding: 30px 40px;
+
+}
+
+.wrapper h1 {
+    font-size: 40px;
+    text-align: center;
+    font-weight: 800;
+
+}
+
+.wrapper .input-box {
+    width: 100%;
+    height: 50px;
+
+    margin: 30px 0px;
+}
+
+.input-box input {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    border: 2px solid rgba(255, 255, 255, .2);
+    border-radius: 40px;
+    font-size: 16px;
+    color: #fff;
+    padding: 20px 45px 20px 20px;
+
+}
+
+.input-box {
+    position: relative;
+}
+
+.input-box input::placeholder {
+    color: #fff;
+}
+
+.input-box i {
+    position: absolute;
+
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
+
+}
+
+.wrapper .remember-forgot {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14.5px;
+    margin: -15px 0 15px;
+
+}
+
+.remember-forgot label input {
+    accent-color: #ffffff;
+    margin-right: 3px;
+
+}
+
+.remember-forgot a {
+
+    color: #fff;
+    text-decoration: none;
+    margin-right: 5px;
+    font-weight: 540;
+}
+
+.remember-forgot a:hover {
+    text-decoration: underline;
+}
+
+.wrapper .btn {
+    width: 100%;
+    height: 45px;
+    background: #fff;
+    border: none;
+    outline: none;
+    border-radius: 40px;
+    box-shadow: 0 0 10px rgb(0, 0, 0, .1);
+    cursor: pointer;
+    font-size: 18px;
+    color: #333;
+    font-weight: 600;
+}
+
+.wrapper .register-link {
+    font-size: 14.5px;
+    text-align: center;
+    margin: 20px 0 15px;
+
+}
+
+.register-link p a {
+    text-decoration: none;
+    color: #fff;
+    margin-left: 10px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.register-link p a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 600px) {
+    .pstt {
+        position: absolute;
+        top: 15;
+        right: 0;
+    }
+
+    .pstt-img {
+        width: 30vw;
+        height: 50vh;
+
+    }
+
+    .gotoaccounts {
+        flex-direction: column;
+        /* Stack elements vertically */
+        text-align: center;
+        padding: 15px;
+    }
+
+    .getting-started-btn {
+        font-size: 3vw;
+        padding: 8px 16px;
+        margin-top: 20px;
+    }
+
+    .getting-started-btn:hover {
+        text-decoration: underline;
+        cursor: pointer;
+    }
+
+    .next-content {
+        /* background-color: pink; */
+        width: 500px;
+        margin: 30px;
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 758px) {
+    .pstt {
+        position: absolute;
+        top: 15;
+        right: 0;
+    }
+
+    .pstt-img {
+        width: 27vw;
+        height: 50vh;
+    }
+
+    .gotoaccounts {
+        flex-direction: column;
+        /* Stack elements vertically */
+        text-align: center;
+        padding: 15px;
+    }
+
+    .getting-started-btn {
+        font-size: 3vw;
+        padding: 8px 8px;
+        margin-top: 10px;
+        padding: 8px;
+    }
+
+    .getting-started-btn:hover {
+        text-decoration: underline;
+        cursor: pointer;
+    }
+
+    .next-content {
+        /* background-color: pink; */
+        width: 500px;
+        margin: 30px;
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .gotoaccounts {
+        width: 95%;
+        padding: 10px;
+    }
+
+    .getting-started-btn {
+
+        font-size: 16px;
+        width: 100%;
+        /* Full-width button on small screens */
+        padding: 8px;
+    }
+}
+
+/* element mei dalengi yeh property
+animation-duration:3s;
+animation-name: ;
+animation-timing-function: ease-in-out;
+animation-delay:1s;
+animation-interation-count:infinite;
+animation-direction:alternate;
+animation: 3s spin easy-in-out 1s infinite alternate; */
+/* .element:hover{
+    animation-play-state: running;
+} */

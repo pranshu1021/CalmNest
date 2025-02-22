@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Lobby</title>
+    <script src="https://cdn.socket.io/4.5.4/socket.io.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+
+<body>
+    <div class="logo-container">
+        <a href="../../../index.html"><img src="../../../img/Logo.png" alt="logo" class="logo"></a>
+        <a href="../../../index.html">
+            <h1 class="site-name">CalmNest</h1>
+        </a>
+    </div>
+    <h2 class="introduction">This is a global chat lobby where anyone can join and chat.</h2>
+    <div class="fullChatbox">
+        
+        <!-- nameInput div -->
+        <div class="nameInput">
+            <h3>Enter your name and click or tap the "Join Chat" button.</h3>
+            <input type="text" class="nameholder" id="username" placeholder="Enter your name" required>
+            <button onclick="setUsername()">Join Chat</button>
+        </div>
+
+        <div class="chatboxdiv">
+            <h2> Real-Time Chat</h2>
+            <div id="chat-box"></div>
+            <div class="senderbutton">
+                <input class="messageholder" type="text" id="messageInput" placeholder="Type a message..." autocomplete="off">
+                <button  id="send-button" onclick="sendMessage()">Send</button>
+                
+            </div>
+        </div>
+    </div>
+    
+        
+  
+    <script src="scripts.js"></script>
+</body>
+
+</html>

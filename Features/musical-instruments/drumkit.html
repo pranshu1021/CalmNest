@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>CalmNest</title>
+  <link rel="stylesheet" href="../../style.css">
+
+
+  <style>
+    body {
+      text-align: center;
+      background-image: url(../musical-instruments/images/background-image.jpg);
+      justify-content: center;
+      width: 100vw;
+      height: 100vh;
+      background-size: cover;
+      /* background-position: center; */
+      background-repeat: no-repeat;
+    }
+    .drum{
+      transition: transform 0.4ms ease-in-out;
+    z-index: 7;
+    }
+    .drum:hover{
+      transform:scale(1.12);
+    }
+    .name-of-feature{
+      margin: 50px 50px;
+      position: absolute;
+      padding: 30px;
+      top: 100px;
+      display: inline;
+      /* background-color: #ffd900; */
+      backdrop-filter: blur(30px);
+      border-radius: 7px;
+
+    }
+    .name-of-feature h2{
+      color: white;
+    }
+
+    h1 {
+      font-size: 5rem;
+      color: #DBEDF3;
+      font-family: "Poppins", serif;
+      font-weight: 600;
+      text-shadow: 3px 0 #363636;
+
+    }
+
+    footer {
+      color: #DBEDF3;
+      font-family: sans-serif;
+    }
+
+    .w {
+      background-image: url("images/crash.png");
+
+
+      background-size: contain;
+
+    }
+
+    .a {
+      background-image: url("images/kick.png");
+      background-size: contain;
+    }
+
+    .s {
+      background-image: url("images/snare.png");
+      background-size: contain;
+
+    }
+
+    .d {
+      background-image: url("images/tom1.png");
+      background-size: contain;
+    }
+
+    .j {
+      background-image: url("images/tom2.png");
+      background-size: contain;
+    }
+
+    .k {
+      background-image: url("images/tom3.png");
+      background-size: contain;
+    }
+
+    .l {
+      background-image: url("images/tom4.png");
+      background-size: contain;
+    }
+
+    .set {
+      margin: 28% auto;
+      display: absolute;
+      /* background-color: aqua; */
+      backdrop-filter: blur(20px);
+      padding: 20px;
+      margin-top: 850px;
+
+
+    }
+
+    .game-over {
+      background-color: red;
+      opacity: 0.8;
+    }
+
+    .pressed {
+      box-shadow: 0 3px 4px 0 #DBEDF3;
+      opacity: 0.5;
+    }
+
+    .red {
+      color: red;
+    }
+
+    .drum {
+      outline: none;
+      border: 10px solid #404B69;
+      font-size: 5rem;
+      font-family: "Poppins", serif;
+      font-weight: 600;
+      line-height: 2;
+      font-weight: 900;
+      padding: 100px 10px 10px 10px; 
+      color: #ffffff;
+      /* text-shadow: 3px 0 #DBEDF3; */
+      border-radius: 15px;
+      display: inline-block;
+      width: 150px;
+      height: 150px;
+      text-align: center;
+      margin: 10px;
+      background-color: #F9E795;
+    }
+    @media (max-width: 1230px) {
+      .name-of-feature{
+        color: pink;
+      }
+      .set{
+        margin-top: 400px;
+      }
+      h1 {
+      font-size: 4rem;
+      color: #DBEDF3;
+      font-family: "Poppins", serif;
+      font-weight: 600;
+      text-shadow: 3px 0 #363636;
+
+    }
+    }
+    @media (max-width: 770px) {
+      
+      .set{
+        margin-top: 450px;
+      }
+      h1 {
+      font-size: 3rem;
+      color: #DBEDF3;
+      font-family: "Poppins", serif;
+      font-weight: 600;
+      text-shadow: 3px 0 #363636;
+
+    }
+    
+    }
+  </style>
+</head>
+
+<body>
+  <div class="logo-container">
+    <a href="../../index.html"><img src="/img/Logo.png" alt="logo" class="logo"></a>
+    <a href="../../index.html">
+      <h1 class="site-name">CalmNest</h1>
+    </a>
+  </div>
+
+  <div class="name-of-feature">
+    <h1 id="title">Drum Kit:</h1> <h2>Create something that will make you feel better.</h2>
+  </div>
+  <div class="set">
+    <button class="w drum">w</button>
+    <button class="a drum">a</button>
+    <button class="s drum">s</button>
+    <button class="d drum">d</button>
+    <button class="j drum">j</button>
+    <button class="k drum">k</button>
+    <button class="l drum">l</button>
+  </div>
+
+
+  <footer>
+
+  </footer>
+  <script src="drumkit.js"></script>
+</body>
+
+</html>

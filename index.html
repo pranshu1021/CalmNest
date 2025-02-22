@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CalmNest: Stay Cool</title>
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <style>
+        body {
+            background-image: url(img/home-page-image1.jpg );
+
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            
+            background-size: cover;
+            background-position: center;
+        }
+
+        * {
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+
+
+
+        .card-container {
+            display: flex;
+            gap: 50px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 10px;
+            /* background-color: blue; */
+
+            padding: 50px 10px 10px;
+        }
+
+        .card {
+            width: 325px;
+            /* background-color: #00ff22; */
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, .2);
+            cursor: pointer;
+        }
+
+        .blur-box {
+            padding: 15px;
+            backdrop-filter: blur(4px);
+        }
+
+        .scroll-instruction {
+            font-size: 26px;
+            color: white;
+        }
+        .card a{
+            text-decoration: none;
+            
+        }
+    </style>
+</head>
+
+<body>
+    <div class="logo-container">
+        <a href="index.html"><img src="./img/Logo.png" alt="logo" class="logo"></a>
+        <a href="index.html">
+            <h1 class="site-name">CalmNest</h1>
+        </a>
+    </div>
+    <div class="wrapper-homepage">
+        <div class="starting-content">
+            <div class="Instructions">
+                <h2>BEING A STUDENT OR A WORKER CAN BE TIRING...</h2>
+                <h2>BUT YOU CAN RELAX HERE.</h2>
+                <p class="scroll-instruction">Scroll... down to see what appeals you and helps you to calm down.</p>
+
+            </div>
+            <div class="starting-content-img">
+                <!-- <img class="starting-img" src="./img/BOY.jpg"> -->
+
+            </div>
+
+
+        </div>
+        <div class="card-container">
+            <div class="blur-box">
+                <div class="card">
+                    <a href="./Features/realtime-chat/chat-app/main.html">
+                    <img class="card-image" src="img/feature-cards/card-1-image.png">
+                    <div class="card-content">
+                        <h3>Hang-out with Friends</h3>
+                        <p>Enjoying music and vibing together with friends, sharing the moment and feeling the rhythm. A
+                            perfect way to relax and connect. </p>
+                    </div>
+                    </a>
+                </div>
+            </div>
+            <div class="blur-box">
+                <div class="card 2">
+                    <img class="card-image" src="img/feature-cards/card-2-image.png">
+                    <div class="card-content">
+                        <h3>Not Feeling Good? Talk to your Friend Mickey</h3>
+                        <p>You're able to talk with personalised chatbox which truly understands your feelings.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="blur-box">
+                <div class="card 3">
+                    <img class="card-image" src="img/feature-cards/card-3-image.png">
+                    <div class="card-content">
+                        <h3>Love the nature?</h3>
+                        <p>Enjoy the soothing sounds of nature like chirping of birds, waterfalls etc.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="blur-box">
+                <div class="card 4">
+                    <a href="./Features/musical-instruments/drumkit.html">
+                    <img class="card-image" src="img/feature-cards/card-4-image.png">
+                    <div class="card-content">
+                        <h3>Like Playing Musical Instruments?</h3>
+                        <p>Use our free-Intruments to create blessed music and tunes.</p>
+                    </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+
+
+        <!-- <a href="login.html"><button class="btn1">Hey CLICK ME</button></a> -->
+        <div class="gotoaccounts">
+            <div class="next-content">
+                <p> If You want to experience these features head over to the next page, Click on Login / Register
+                    button.</p>
+            </div>
+            <a href="login.html"><button class="getting-started-btn">Login / Register</button></a>
+
+
+        </div>
+    </div>
+
+    <div class="pstt">
+        <img class="pstt-img" src="img/pstt.png" alt="pstt">
+    </div>
+</body>
+
+</html>
