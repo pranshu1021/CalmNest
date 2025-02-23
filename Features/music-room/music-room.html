@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Room</title>
+    <link rel="stylesheet" href="styless.css">
+</head>
+<body>
+    <div class="logo-container">
+        <a href="../../index.html"><img src="../../img/Logo.png" alt="logo" class="logo"></a>
+        <a href="../../index.html">
+            <h1 class="site-name">CalmNest</h1>
+        </a>
+    </div>
+
+    <div id="username-popup">
+        <div class="popup-box">
+            <h2>Enter Your Username</h2>
+            <input type="text" id="username-input" placeholder="Your Name">
+            <button id="set-username-btn">Enter</button>
+        </div>
+    </div>
+
+    <div id="main-container">
+        <h1 class="fade-in">🎵 Music Room 🎵</h1>
+        <h2 id="user-display"></h2>
+
+        <div class="room-section">
+            <button id="create-room-btn">Create Room</button>
+            <input type="text" id="room-id-input" placeholder="Enter Room ID">
+            <button id="join-room-btn">Join Room</button>
+        </div>
+
+        <h3 id="room-id-display"></h3>
+
+        <div id="members-container">
+            <h3>Members</h3>
+            <ul id="members-list"></ul>
+        </div>
+
+        <div id="music-section">
+            <input type="text" id="song-input" placeholder="Search a Song">
+            <button id="search-song-btn">Search</button>
+            <div id="search-results"></div>
+        </div>
+
+        <div id="player-container">
+            <iframe id="music-player" frameborder="0" allowfullscreen></iframe>
+        </div>
+
+        <div id="controls-container">
+            <button id="play-song-btn">Play</button>
+            <button id="pause-song-btn">Pause</button>
+        </div>
+    </div>
+    <!-- 🎤 Private Chat Lobby -->
+<div id="chat-container">
+    <div id="chat-header">💬 Private Chat</div>
+    <div id="messages"></div>
+    <div id="chat-input">
+        <input type="text" id="message-input" placeholder="Type a message..." />
+        <button id="send-message-btn">➤</button>
+    </div>
+</div>
+
+
+    <script type="module" src="firebase.js"></script>
+    <script type="module" src="script.js"></script>
+</body>
+</html>
