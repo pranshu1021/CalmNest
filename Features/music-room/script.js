@@ -193,3 +193,29 @@ const listenToMessages = () => {
         }
     });
 };
+
+
+ messageInput.addEventListener("keydown", function(event) {
+    if (event.key === "Enter") { // Enter key check
+        sendMessageBtn.click(); // Button ko click trigger karega
+    }
+});
+usernameInput.addEventListener("keydown", function(event) {
+    if (event.key === "Enter") { // Enter key check
+        setUsernameBtn.click(); // Button ko click trigger karega
+    }
+});
+let chatBox = document.getElementById("chat-container");
+let toggleBtn = document.getElementById("toggle-chat-btn");
+
+// 🔹 Button se toggle hoga
+toggleBtn.addEventListener("click", function() {
+    chatBox.style.display = "flex";
+    toggleBtn.style.display = "none"; // Button hatana hai
+});
+
+// 🔹 Chat-header (Private Chat) dabane pe vapis button ban jayega
+document.getElementById("chat-header").addEventListener("click", function() {
+    chatBox.style.display = "none";
+    toggleBtn.style.display = "block"; // Button vapis lana hai
+});
