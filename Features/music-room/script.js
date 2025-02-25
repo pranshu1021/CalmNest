@@ -208,14 +208,19 @@ usernameInput.addEventListener("keydown", function(event) {
 let chatBox = document.getElementById("chat-container");
 let toggleBtn = document.getElementById("toggle-chat-btn");
 
-// 🔹 Button se toggle hoga
-toggleBtn.addEventListener("click", function() {
+document.addEventListener("DOMContentLoaded", function () {
+    // Jab website load ho tab chatbox khula rahe
     chatBox.style.display = "flex";
-    toggleBtn.style.display = "none"; // Button hatana hai
+    toggleBtn.style.display = "none"; // Button initially hidden rahe
 });
-
 // 🔹 Chat-header (Private Chat) dabane pe vapis button ban jayega
 document.getElementById("chat-header").addEventListener("click", function() {
     chatBox.style.display = "none";
     toggleBtn.style.display = "block"; // Button vapis lana hai
+});
+
+// 🔹 Button se toggle hoga
+toggleBtn.addEventListener("click", function() {
+    chatBox.style.display = "flex";
+    toggleBtn.style.display = "none"; // Button hatana hai
 });
