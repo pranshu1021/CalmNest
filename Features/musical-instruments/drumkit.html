@@ -5,6 +5,7 @@
   <meta charset="utf-8">
   <title>CalmNest</title>
   <link rel="stylesheet" href="../../style.css">
+  
 
 
   <style>
@@ -18,6 +19,9 @@
       /* background-position: center; */
       background-repeat: no-repeat;
     }
+    ::-webkit-scrollbar {
+            display: none;
+        }
     .drum{
       transition: transform 0.4ms ease-in-out;
     z-index: 7;
@@ -166,7 +170,112 @@
       text-shadow: 3px 0 #363636;
 
     }
-    
+    html,
+        body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            display: grid;
+            grid-template-rows: auto 1fr auto;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        /* Main Content */
+        main {
+            flex: 1;
+            padding: 20px;
+        }
+
+        /* Footer Styles */
+        footer {
+            width: 100vw;
+            background: none;
+            backdrop-filter: blur(35px);
+            color: #ffffff;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        /* Footer Container */
+        .footer-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            text-align: center;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        /* Footer Logo */
+        .footer-logo h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .footer-logo p {
+            font-size: 14px;
+            color: #bdc3c7;
+        }
+
+        /* Footer Links */
+        .footer-links h3,
+        .footer-social h3 {
+            font-size: 18px;
+            margin-bottom: 15px;
+        }
+
+        .footer-links ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-links ul li {
+            margin: 8px 0;
+        }
+
+        .footer-links ul li a {
+            color: #ecf0f1;
+            text-decoration: none;
+            transition: color 0.3s ease-in-out;
+        }
+
+        .footer-links ul li a:hover {
+            color: #f39c12;
+        }
+
+        /* Social Media Links */
+        .footer-social a {
+            font-size: 20px;
+            margin: 0 10px;
+            color: #ecf0f1;
+            transition: color 0.3s ease-in-out;
+        }
+
+        .footer-social a:hover {
+            color: #f39c12;
+        }
+
+        /* Footer Bottom Section */
+        .footer-bottom {
+            text-align: center;
+            padding: 4px 0;
+            background: #1a252f;
+            font-size: 14px;
+            margin-top: 20px;
+            margin-bottom: 0;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .footer-container {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        ::-webkit-scrollbar {
+            display: none;
+        }
     }
   </style>
 </head>

@@ -5,6 +5,117 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Relaxing Nature Sounds</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
+
+    <style>
+          /* Global Reset */
+          html,
+        body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            display: grid;
+            grid-template-rows: auto 1fr auto;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        /* Main Content */
+        main {
+            flex: 1;
+            padding: 20px;
+        }
+
+        /* Footer Styles */
+        footer {
+            width: 100vw;
+            background: none;
+            backdrop-filter: blur(35px);
+            color: #ffffff;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        /* Footer Container */
+        .footer-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            text-align: center;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        /* Footer Logo */
+        .footer-logo h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .footer-logo p {
+            font-size: 14px;
+            color: #bdc3c7;
+        }
+
+        /* Footer Links */
+        .footer-links h3,
+        .footer-social h3 {
+            font-size: 18px;
+            margin-bottom: 15px;
+        }
+
+        .footer-links ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-links ul li {
+            margin: 8px 0;
+        }
+
+        .footer-links ul li a {
+            color: #ecf0f1;
+            text-decoration: none;
+            transition: color 0.3s ease-in-out;
+        }
+
+        .footer-links ul li a:hover {
+            color: #f39c12;
+        }
+
+        /* Social Media Links */
+        .footer-social a {
+            font-size: 20px;
+            margin: 0 10px;
+            color: #ecf0f1;
+            transition: color 0.3s ease-in-out;
+        }
+
+        .footer-social a:hover {
+            color: #f39c12;
+        }
+
+        /* Footer Bottom Section */
+        .footer-bottom {
+            text-align: center;
+            padding: 4px 0;
+            background: #1a252f;
+            font-size: 14px;
+            margin-top: 20px;
+            margin-bottom: 0;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .footer-container {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        ::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
 </head>
 <body>
     <div class="logo-container">
@@ -31,7 +142,38 @@
             <button id="loopBtn">🔁</button>
         </div>
     </div>
+    <footer>
+        <div class="footer-container">
+            <div class="footer-logo">
+                <h2>Fineworks Pvt. Ltd</h2>
+                <p>Crafting Excellence, Delivering Perfection</p>
+            </div>
+
+            <div class="footer-links">
+                <h3>Quick Link</h3>
+                <ul>
+                    <li><a href="#about">About</a></li>
+                   
+                    <li>Contact: <i class='bx bxl-gmail' style='color:#ffffff' ></i>  pranshugupta1423@gmail.com</li>
+                  
+                </ul>
+            </div>
+
+            <div class="footer-social">
+                <h3>Follow Us</h3>
+                <a href="#"><i class='bx bxl-facebook-square' style='color:#ffffff' ></i></a>
+                <a href="#"><i class='bx bxl-instagram'></i></a>
+                <a href="#"><i class='bx bxl-twitter' style='color:#ffffff' ></i></a>
+                <a href="#"><i class='bx bxl-youtube' style='color:#ffffff' ></i></a>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2025 Fineworks Pvt. Ltd. All Rights Reserved.</p>
+        </div>
+    </footer>
 
     <script src="script.js"></script>
+
 </body>
 </html>

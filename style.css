@@ -148,7 +148,9 @@
     width: 14vw;
     height: 60vh;
 }
-
+.footer{
+    background-color: cyan;
+}
 body {
     /* background-image: url(/img/home-page-image.jpg )no-repeat; */
     display: flex;

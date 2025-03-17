@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="style.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
+
     <style>
         body {
             background-image: url(img/home-page-image1.jpg );
@@ -17,7 +18,7 @@
             min-height: 100vh;
             background-repeat: no-repeat;
             background-attachment: fixed;
-            
+
             background-size: cover;
             background-position: center;
         }
@@ -59,9 +60,118 @@
             font-size: 26px;
             color: white;
         }
-        .card a{
+
+        .card a {
             text-decoration: none;
-            
+
+        }
+
+        /* Global Reset */
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            display: grid;
+            grid-template-rows: auto 1fr auto;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        /* Main Content */
+        main {
+            flex: 1;
+            padding: 20px;
+        }
+
+        /* Footer Styles */
+        footer {
+            width: 100vw;
+            background: none;
+            backdrop-filter: blur(35px);
+            color: #ffffff;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        /* Footer Container */
+        .footer-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            text-align: center;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        /* Footer Logo */
+        .footer-logo h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .footer-logo p {
+            font-size: 14px;
+            color: #bdc3c7;
+        }
+
+        /* Footer Links */
+        .footer-links h3,
+        .footer-social h3 {
+            font-size: 18px;
+            margin-bottom: 15px;
+        }
+
+        .footer-links ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-links ul li {
+            margin: 8px 0;
+        }
+
+        .footer-links ul li a {
+            color: #ecf0f1;
+            text-decoration: none;
+            transition: color 0.3s ease-in-out;
+        }
+
+        .footer-links ul li a:hover {
+            color: #f39c12;
+        }
+
+        /* Social Media Links */
+        .footer-social a {
+            font-size: 20px;
+            margin: 0 10px;
+            color: #ecf0f1;
+            transition: color 0.3s ease-in-out;
+        }
+
+        .footer-social a:hover {
+            color: #f39c12;
+        }
+
+        /* Footer Bottom Section */
+        .footer-bottom {
+            text-align: center;
+            padding: 4px 0;
+            background: #1a252f;
+            font-size: 14px;
+            margin-top: 20px;
+            margin-bottom: 0;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .footer-container {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        ::-webkit-scrollbar {
+            display: none;
         }
     </style>
 </head>
@@ -92,45 +202,46 @@
             <div class="blur-box">
                 <div class="card">
                     <a href="./Features/music-room/music-room.html">
-                    <img class="card-image" src="img/feature-cards/card-1-image.png">
-                    <div class="card-content">
-                        <h3>Hang-out with Friends</h3>
-                        <p>Enjoying music and vibing together with friends, sharing the moment and feeling the rhythm. A
-                            perfect way to relax and connect. </p>
-                    </div>
+                        <img class="card-image" src="img/feature-cards/card-1-image.png">
+                        <div class="card-content">
+                            <h3>Hang-out with Friends</h3>
+                            <p>Enjoying music and vibing together with friends, sharing the moment and feeling the
+                                rhythm. A
+                                perfect way to relax and connect. </p>
+                        </div>
                     </a>
                 </div>
             </div>
             <div class="blur-box">
                 <div class="card 2">
                     <a href="./Features/mickey-chatbot/chatbot.html">
-                    <img class="card-image" src="img/feature-cards/card-2-image.png">
-                    <div class="card-content">
-                        <h3>Not Feeling Good? Talk to your Friend Mickey</h3>
-                        <p>You're able to talk with personalised chatbox which truly understands your feelings.</p>
-                    </div>
+                        <img class="card-image" src="img/feature-cards/card-2-image.png">
+                        <div class="card-content">
+                            <h3>Not Feeling Good? Talk to your Friend Mickey</h3>
+                            <p>You're able to talk with personalised chatbox which truly understands your feelings.</p>
+                        </div>
                     </a>
                 </div>
             </div>
             <div class="blur-box">
                 <div class="card 3">
                     <a href="./Features/music-integration/musicplayer.html">
-                    <img class="card-image" src="img/feature-cards/card-3-image.png">
-                    <div class="card-content">
-                        <h3>Love the nature?</h3>
-                        <p>Enjoy the soothing sounds of nature like chirping of birds, waterfalls etc.</p>
-                    </div>
+                        <img class="card-image" src="img/feature-cards/card-3-image.png">
+                        <div class="card-content">
+                            <h3>Love the nature?</h3>
+                            <p>Enjoy the soothing sounds of nature like chirping of birds, waterfalls etc.</p>
+                        </div>
                     </a>
                 </div>
             </div>
             <div class="blur-box">
                 <div class="card 4">
                     <a href="./Features/musical-instruments/drumkit.html">
-                    <img class="card-image" src="img/feature-cards/card-4-image.png">
-                    <div class="card-content">
-                        <h3>Like Playing Musical Instruments?</h3>
-                        <p>Use our free-Intruments to create blessed music and tunes.</p>
-                    </div>
+                        <img class="card-image" src="img/feature-cards/card-4-image.png">
+                        <div class="card-content">
+                            <h3>Like Playing Musical Instruments?</h3>
+                            <p>Use our free-Intruments to create blessed music and tunes.</p>
+                        </div>
                     </a>
                 </div>
             </div>
@@ -148,11 +259,54 @@
 
 
         </div>
+        <!-- <div class="views-counter">
+            <p>This page is visited</p>
+            <p>Views: <span id="viewCount">0</span></p>
+            <p>times.</p>
+        </div> -->
     </div>
 
     <div class="pstt">
         <img class="pstt-img" src="img/pstt.png" alt="pstt">
     </div>
+    <!-- <script>
+            fetch("https://api.countapi.xyz/hit/CalmNest/views") 
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById("viewCount").innerText = data.value;
+            });
+    </script> -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-logo">
+                <h2>Fineworks Pvt. Ltd</h2>
+                <p>Crafting Excellence, Delivering Perfection</p>
+            </div>
+
+            <div class="footer-links">
+                <h3>Quick Link</h3>
+                <ul>
+                    <li><a href="#about">About</a></li>
+                   
+                    <li>Contact: <i class='bx bxl-gmail' style='color:#ffffff' ></i>  pranshugupta1423@gmail.com</li>
+                  
+                </ul>
+            </div>
+
+            <div class="footer-social">
+                <h3>Follow Us</h3>
+                <a href="#"><i class='bx bxl-facebook-square' style='color:#ffffff' ></i></a>
+                <a href="#"><i class='bx bxl-instagram'></i></a>
+                <a href="#"><i class='bx bxl-twitter' style='color:#ffffff' ></i></a>
+                <a href="#"><i class='bx bxl-youtube' style='color:#ffffff' ></i></a>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2025 Fineworks Pvt. Ltd. All Rights Reserved.</p>
+        </div>
+    </footer>
+
 </body>
 
 </html>
