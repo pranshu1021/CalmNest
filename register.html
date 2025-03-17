@@ -14,9 +14,36 @@
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-
             background-size: cover;
             background-position: center;
+        }
+
+        .profile-container {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 5px 10px;
+            border-radius: 10px;
+            z-index: 5;
+        }
+
+        .profile-container img {
+            z-index: 5;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid white;
+        }
+
+        .profile-container span {
+            color: white;
+            z-index: 5;
+            font-weight: bold;
         }
     </style>
 </head>
@@ -24,41 +51,118 @@
 <body>
     <div class="logo-container">
         <a href="./index.html"><img src="./img/Logo.png" alt="logo" class="logo"></a>
-        <a href="./index.html"><h1 class="site-name">CalmNest</h1></a>
+        <a href="./index.html">
+            <h1 class="site-name">CalmNest</h1>
+        </a>
     </div>
+    <!-- Profile Container (For Logged-in Users) -->
+    <div class="profile-container" id="profile-container">
+        <img id="user-photo" src="./img/default-profile-pic.png" alt="User Photo">
+        <span id="user-name">Guest</span>
+    </div>
+
+
     <div class="wrapper">
-        <form action="">
+        <form id="register-form">
             <h1>Register</h1>
             <div class="input-box">
-                <input type="text" placeholder="Username" required>
+                <input type="text" placeholder="Username" id="username" required>
                 <i class='bx bxs-user'></i>
             </div>
             <div class="input-box">
-                <input type="email" placeholder="Gmail" required>
+                <input type="email" placeholder="Gmail" id="email" required>
                 <i class='bx bx-envelope'></i>
             </div>
             <div class="input-box">
-                <input type="password" placeholder="Password" required>
-                <i class='bx bxs-lock-open-alt' style='color:#ffffff' ></i>
+                <input type="password" placeholder="Password" id="password" required>
+                <i class='bx bxs-lock-open-alt'></i>
             </div>
             <div class="input-box">
-                <input type="password" placeholder="Confirm Password" required>
+                <input type="password" placeholder="Confirm Password" id="confirm-password" required>
                 <i class='bx bxs-lock-alt'></i>
             </div>
-            
+
             <div class="remember-forgot">
                 <label><input type="checkbox"> Remember me</label>
-                <!-- <a href="#">Forgot password?</a> -->
             </div>
             <button type="submit" class="btn">Register!</button>
 
             <div class="register-link">
-                <p>Already, Have a account?<a href="login.html">Login</a></p>
+                <p>Already have an account? <a href="login.html">Login</a></p>
             </div>
-
-            
         </form>
     </div>
+
+    <script type="module">
+        // 🔥 Firebase SDK Import
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+        import { getAuth, onAuthStateChanged, createUserWithEmailAndPassword, updateProfile } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
+
+        // 🔹 Firebase Configuration (Replace with Your Firebase Details)
+        const firebaseConfig = {
+            apiKey: "AIzaSyDGBpchBzHl03HUeUrtrcHrLLzWd-QC_II",
+            authDomain: "calmnest-4b727.firebaseapp.com",
+            projectId: "calmnest-4b727",
+            storageBucket: "calmnest-4b727.appspot.com",
+            messagingSenderId: "407039391755",
+            appId: "1:407039391755:web:df9578cfd4a24ed1fc6f0e"
+        };
+
+        // 🔥 Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+
+        // 🔹 Form Submission Event Listener
+        document.querySelector("#register-form").addEventListener("submit", async (e) => {
+            e.preventDefault();
+
+            // 🔹 Input Fields
+            let username = document.getElementById("username").value;
+            let email = document.getElementById("email").value;
+            let password = document.getElementById("password").value;
+            let confirmPassword = document.getElementById("confirm-password").value;
+
+            // 🔹 Password Match Validation
+            if (password !== confirmPassword) {
+                alert("Passwords do not match!");
+                return;
+            }
+
+            try {
+                // 🔹 Register User with Firebase Authentication
+                let userCredential = await createUserWithEmailAndPassword(auth, email, password);
+
+                // 🔹 Save Username in Firebase Profile
+                await updateProfile(userCredential.user, {
+                    displayName: username
+                });
+
+                alert("User Registered Successfully!");
+                console.log("Registered User:", userCredential.user);
+                window.location.href = "login.html"; // Redirect to Login Page
+            } catch (error) {
+                console.error("Error:", error.message);
+                alert(error.message);
+            }
+        });
+        // 🔥 Fetch User Data and Update Profile UI
+        onAuthStateChanged(auth, (user) => {
+            const userPhoto = document.getElementById("user-photo");
+            const userName = document.getElementById("user-name");
+            const profileContainer = document.getElementById("profile-container");
+
+            if (user) {
+                // ✅ User is Logged In → Show Profile
+                userPhoto.src = user.photoURL ? user.photoURL : "./img/default-avatar.png";
+                userName.textContent = user.displayName ? user.displayName : "User";
+                profileContainer.style.display = "flex";
+            } else {
+                // ❌ User is Logged Out → Hide Profile
+                profileContainer.style.display = "none";
+            }
+        });
+
+    </script>
 </body>
 
 </html>
