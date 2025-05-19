@@ -5,6 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="bot.css">
+    <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-auth-compat.js"></script>
+
+<script>
+  // Your Firebase config object (replace with your actual config)
+        const firebaseConfig = {
+            apiKey: "AIzaSyDGBpchBzHl03HUeUrtrcHrLLzWd-QC_II",
+            authDomain: "calmnest-4b727.firebaseapp.com",
+            projectId: "calmnest-4b727",
+            storageBucket: "calmnest-4b727.appspot.com",
+            messagingSenderId: "407039391755",
+            appId: "1:407039391755:web:df9578cfd4a24ed1fc6f0e"
+        };
+
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+
+  // Initialize Firebase Auth
+  const auth = firebase.auth();
+</script>
 </head>
 <body>
     <div class="logo-container">
@@ -21,5 +41,78 @@
     <script>
         (function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="OlCoD9duJ55LB8x-zcNUO";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
         </script>
+    <script>
+  auth.onAuthStateChanged(user => {
+    if (user) {
+      console.log("User logged in:", user.email);
+
+      // Check if profile box already exists, remove if yes
+      const existingBox = document.getElementById('profile-box');
+      if (existingBox) existingBox.remove();
+
+      // Create profile box container
+      const profileBox = document.createElement('div');
+      profileBox.id = 'profile-box';
+      profileBox.style.position = 'fixed';
+      profileBox.style.top = '20px';
+      profileBox.style.right = '20px';
+      profileBox.style.background = 'rgba(0, 0, 0, 0.7)';
+      profileBox.style.backdropFilter = 'blur(10px)';
+      profileBox.style.borderRadius = '15px';
+      profileBox.style.padding = '10px 20px';
+      profileBox.style.display = 'flex';
+      profileBox.style.alignItems = 'center';
+      profileBox.style.boxShadow = '0 4px 12px rgba(0,0,0,0.3)';
+      profileBox.style.color = 'white';
+      profileBox.style.fontFamily = "'Poppins', sans-serif";
+      profileBox.style.zIndex = '1000';
+      profileBox.style.minWidth = '250px';
+      profileBox.style.gap = '15px';
+
+      // Updated Dicebear avatar URL
+      const avatar = document.createElement('img');
+      avatar.src = `https://api.dicebear.com/6.x/bottts/svg?seed=${encodeURIComponent(user.email)}`;
+      avatar.alt = 'User Avatar';
+      avatar.style.width = '60px';
+      avatar.style.height = '60px';
+      avatar.style.borderRadius = '50%';
+      avatar.style.objectFit = 'cover';
+      avatar.style.border = '2px solid #f39c12';
+
+      // User email text container
+      const userInfo = document.createElement('div');
+      userInfo.style.display = 'flex';
+      userInfo.style.flexDirection = 'column';
+
+      const welcomeText = document.createElement('span');
+      welcomeText.textContent = 'Welcome';
+      welcomeText.style.fontSize = '14px';
+      welcomeText.style.opacity = '0.7';
+
+      const emailText = document.createElement('span');
+      emailText.textContent = user.email;
+      emailText.style.fontWeight = '600';
+      emailText.style.fontSize = '16px';
+      emailText.style.wordBreak = 'break-word';
+
+      // Append text spans to user info div
+      userInfo.appendChild(welcomeText);
+      userInfo.appendChild(emailText);
+
+      // Append avatar and userInfo to profile box
+      profileBox.appendChild(avatar);
+      profileBox.appendChild(userInfo);
+
+      // Add profile box to body
+      document.body.appendChild(profileBox);
+
+    } else {
+      console.log("No user logged in");
+      // Optionally remove profile box if exists
+      const existingBox = document.getElementById('profile-box');
+      if (existingBox) existingBox.remove();
+    }
+  });
+</script>
 </body>
 </html>

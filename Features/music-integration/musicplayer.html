@@ -6,7 +6,26 @@
     <title>Relaxing Nature Sounds</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
+    <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-auth-compat.js"></script>
 
+<script>
+  // Your Firebase config object (replace with your actual config)
+        const firebaseConfig = {
+            apiKey: "AIzaSyDGBpchBzHl03HUeUrtrcHrLLzWd-QC_II",
+            authDomain: "calmnest-4b727.firebaseapp.com",
+            projectId: "calmnest-4b727",
+            storageBucket: "calmnest-4b727.appspot.com",
+            messagingSenderId: "407039391755",
+            appId: "1:407039391755:web:df9578cfd4a24ed1fc6f0e"
+        };
+
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+
+  // Initialize Firebase Auth
+  const auth = firebase.auth();
+</script>
     <style>
           /* Global Reset */
           html,
@@ -159,12 +178,12 @@
                 </ul>
             </div>
 
-            <div class="footer-social">
+<div class="footer-social">
                 <h3>Follow Us</h3>
-                <a href="#"><i class='bx bxl-facebook-square' style='color:#ffffff' ></i></a>
-                <a href="#"><i class='bx bxl-instagram'></i></a>
-                <a href="#"><i class='bx bxl-twitter' style='color:#ffffff' ></i></a>
-                <a href="#"><i class='bx bxl-youtube' style='color:#ffffff' ></i></a>
+                <a href="https://www.facebook.com/profile.php?id=61574224292227&sk=about"><i class='bx bxl-facebook-square' style='color:#ffffff' ></i></a>
+                <a href="https://www.instagram.com/fineworks_main/"><i class='bx bxl-instagram'></i></a>
+                <a href="https://x.com/fineworks_main"><i class='bx bxl-twitter' style='color:#ffffff' ></i></a>
+                <a href="https://www.youtube.com/@Fineworks_main"><i class='bx bxl-youtube' style='color:#ffffff' ></i></a>
             </div>
         </div>
 
@@ -174,6 +193,78 @@
     </footer>
 
     <script src="script.js"></script>
+<script>
+  auth.onAuthStateChanged(user => {
+    if (user) {
+      console.log("User logged in:", user.email);
 
+      // Check if profile box already exists, remove if yes
+      const existingBox = document.getElementById('profile-box');
+      if (existingBox) existingBox.remove();
+
+      // Create profile box container
+      const profileBox = document.createElement('div');
+      profileBox.id = 'profile-box';
+      profileBox.style.position = 'fixed';
+      profileBox.style.top = '20px';
+      profileBox.style.right = '20px';
+      profileBox.style.background = 'rgba(0, 0, 0, 0.7)';
+      profileBox.style.backdropFilter = 'blur(10px)';
+      profileBox.style.borderRadius = '15px';
+      profileBox.style.padding = '10px 20px';
+      profileBox.style.display = 'flex';
+      profileBox.style.alignItems = 'center';
+      profileBox.style.boxShadow = '0 4px 12px rgba(0,0,0,0.3)';
+      profileBox.style.color = 'white';
+      profileBox.style.fontFamily = "'Poppins', sans-serif";
+      profileBox.style.zIndex = '1000';
+      profileBox.style.minWidth = '250px';
+      profileBox.style.gap = '15px';
+
+      // Updated Dicebear avatar URL
+      const avatar = document.createElement('img');
+      avatar.src = `https://api.dicebear.com/6.x/bottts/svg?seed=${encodeURIComponent(user.email)}`;
+      avatar.alt = 'User Avatar';
+      avatar.style.width = '60px';
+      avatar.style.height = '60px';
+      avatar.style.borderRadius = '50%';
+      avatar.style.objectFit = 'cover';
+      avatar.style.border = '2px solid #f39c12';
+
+      // User email text container
+      const userInfo = document.createElement('div');
+      userInfo.style.display = 'flex';
+      userInfo.style.flexDirection = 'column';
+
+      const welcomeText = document.createElement('span');
+      welcomeText.textContent = 'Welcome';
+      welcomeText.style.fontSize = '14px';
+      welcomeText.style.opacity = '0.7';
+
+      const emailText = document.createElement('span');
+      emailText.textContent = user.email;
+      emailText.style.fontWeight = '600';
+      emailText.style.fontSize = '16px';
+      emailText.style.wordBreak = 'break-word';
+
+      // Append text spans to user info div
+      userInfo.appendChild(welcomeText);
+      userInfo.appendChild(emailText);
+
+      // Append avatar and userInfo to profile box
+      profileBox.appendChild(avatar);
+      profileBox.appendChild(userInfo);
+
+      // Add profile box to body
+      document.body.appendChild(profileBox);
+
+    } else {
+      console.log("No user logged in");
+      // Optionally remove profile box if exists
+      const existingBox = document.getElementById('profile-box');
+      if (existingBox) existingBox.remove();
+    }
+  });
+</script>
 </body>
 </html>
