@@ -1,7 +1,3 @@
-@import url("https//fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
-
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Quicksand:wght@300..700&display=swap');
 
 * {
@@ -11,37 +7,98 @@
     font-family: "Poppins", serif;
 }
 
-/* ALL CSS FOR INDEX.html */
+html,
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-image: url(img/home-page-image1.jpg);
+    min-height: 100vh;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+/* Card Styles */
+.card-container {
+    display: flex;
+    gap: 50px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 10px;
+    padding: 50px 10px 12px;
+}
 
 .card {
+    width: 325px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, .2);
+    cursor: pointer;
     backdrop-filter: blur(5px);
-
     transition: transform 0.3s ease-in-out;
     z-index: 7;
 }
 
 .card:hover {
-    /* animation-play-state: running; */
     transform: scale(1.12);
-
 }
 
+.card a {
+    text-decoration: none;
+}
+
+.card-image {
+    width: 400px;
+    height: 300px;
+}
+
+.blur-box {
+    padding: 15px;
+    backdrop-filter: blur(4px);
+}
+
+.card-content {
+    margin-left: 8px;
+    height: 140px;
+    backdrop-filter: blur(100%);
+    color: #fff;
+    font-size: 18px;
+}
+
+/* Homepage Content */
 .starting-content {
-    /*     
-    margin: 60px auto 50px auto;  Center horizontally */
     margin: 0 auto 50px auto;
     display: flex;
-    
     margin-top: 5vw;
-  
     max-width: 1500px;
     padding: 50px 50px;
-    /* background-color: aqua; */
     border-radius: 10px;
     gap: 55px;
     backdrop-filter: blur(16px);
     justify-content: center;
     text-align: center;
+}
+
+.Instructions {
+    display: block;
+    justify-content: center;
+    text-align: center;
+    padding-left: 70px;
 }
 
 .Instructions h2 {
@@ -51,122 +108,27 @@
     color: white;
     justify-content: center;
     text-align: center;
-    
 }
 
-.Instructions {
-    /* background-color: yellow; */
-    display: block;
-    justify-content: center;
-    text-align: center;
-    padding-left: 70px;
-
+.scroll-instruction {
+    font-size: 26px;
+    color: white;
 }
 
 .starting-content-img {
-    /* background-color: bisque; */
     display: flex;
     position: relative;
-
 }
 
 .starting-img {
     width: 350px;
     height: 382px;
     object-fit: fill;
-
 }
 
-.gotoaccounts {
-    display: flex;
-    width: 90%;
-    /* Makes it flexible */
-    max-width: 900px;
-    /* Prevents it from being too wide */
-    margin: 0 auto 50px auto;
-    /* Center horizontally */
-    color: white;
-    backdrop-filter: blur(30px);
-    border-radius: 7px;
-    padding: 20px;
-    margin-top: 70px;
-    /* Some padding for better spacing */
-}
-
-/* 🔹 Button Styling (Responsive Font & Padding) */
-.getting-started-btn {
-    margin-top: 45px;
-    border-radius: 4px;
-    border: none;
-    font-size: clamp(18px, 4vw, 30px);
-
-    font-family: "Poppins", serif;
-    font-weight: 800;
-    background: none;
-    color: white;
-    padding: 10px 20px;
-    text-align: center;
-    transition: all 0.3s ease-in-out;
-    animation-duration: 3s;
-    animation-name: enlargee;
-
-}
-
-@keyframes enlargee {
-    0% {}
-
-    100% {
-        scale: 1.2;
-    }
-}
-
-.getting-started-btn:hover {
-    text-decoration: underline;
-    cursor: pointer;
-
-
-}
-
-.next-content {
-    /* background-color: pink; */
-    width: 500px;
-    margin: 30px;
-    font-size: 20px;
-}
-
-.pstt {
-    position: absolute;
-    top: 15;
-    right: 0;
-}
-
-.pstt-img {
-    width: 14vw;
-    height: 60vh;
-}
-.footer{
-    background-color: cyan;
-}
-body {
-    /* background-image: url(/img/home-page-image.jpg )no-repeat; */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-
-    background-size: cover;
-    background-position: center;
-}
-
-.card-image {
-    width: 400px;
-    height: 300px;
-}
-
-/* ALL CSS FOR LOGIN.html */
+/* Logo and Header */
 .logo-container {
     display: flex;
-    /* background-color: yellow; */
     backdrop-filter: blur(10px);
     align-items: center;
     justify-content: flex-start;
@@ -176,6 +138,12 @@ body {
     top: 0;
     left: 0;
     z-index: 1;
+}
+
+.logo {
+    width: 60px;
+    height: auto;
+    margin-right: 10px;
 }
 
 .site-name {
@@ -188,32 +156,148 @@ body {
     color: #fff;
 }
 
+.wrapper-homepage {
+    margin-top: 70px;
+}
+
 .wrapper-homepage h3 {
     font-family: "Poppins", serif;
     font-size: 20px;
 }
 
-.logo {
-    width: 60px;
-    height: auto;
-    margin-right: 10px;
-
-}
-
-.wrapper-homepage {
-    /* background-color: aqua; */
+/* Login/Register Section */
+.gotoaccounts {
+    display: flex;
+    width: 90%;
+    max-width: 900px;
+    margin: 0 auto 50px auto;
+    color: white;
+    backdrop-filter: blur(30px);
+    border-radius: 7px;
+    padding: 20px;
     margin-top: 70px;
 }
 
-.card-content {
-    margin-left: 8px;
-    height: 140px;
-    backdrop-filter: blur(100%);
-    /* background-color: aqua; */
-    color: #fff;
-    font-size: 18px;
+.next-content {
+    width: 500px;
+    margin: 30px;
+    font-size: 20px;
 }
 
+/* Button Styling */
+.getting-started-btn {
+    margin-top: 45px;
+    border-radius: 4px;
+    border: none;
+    font-size: clamp(18px, 4vw, 30px);
+    font-family: "Poppins", serif;
+    font-weight: 800;
+    background: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    transition: all 0.3s ease-in-out;
+    animation-duration: 3s;
+    animation-name: enlargee;
+}
+
+@keyframes enlargee {
+    100% {
+        scale: 1.2;
+    }
+}
+
+.getting-started-btn:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+/* Footer */
+footer {
+    width: 100vw;
+    background: none;
+    backdrop-filter: blur(35px);
+    color: #ffffff;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.footer-logo h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.footer-logo p {
+    font-size: 14px;
+    color: #bdc3c7;
+}
+
+.footer-links h3,
+.footer-social h3 {
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links ul li {
+    margin: 8px 0;
+}
+
+.footer-links ul li a {
+    color: #ecf0f1;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+}
+
+.footer-links ul li a:hover {
+    color: #f39c12;
+}
+
+.footer-social a {
+    font-size: 20px;
+    margin: 0 10px;
+    color: #ecf0f1;
+    transition: color 0.3s ease-in-out;
+}
+
+.footer-social a:hover {
+    color: #f39c12;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding: 4px 0;
+    background: #1a252f;
+    font-size: 14px;
+    margin-top: 20px;
+    margin-bottom: 0;
+}
+
+/* Misc */
+.pstt {
+    position: absolute;
+    top: 15;
+    right: 0;
+}
+
+.pstt-img {
+    width: 14vw;
+    height: 60vh;
+}
+
+/* Login Page Styles */
 .wrapper {
     width: 420px;
     background: transparent;
@@ -222,21 +306,19 @@ body {
     backdrop-filter: blur(12px);
     border-radius: 10px;
     padding: 30px 40px;
-
 }
 
 .wrapper h1 {
     font-size: 40px;
     text-align: center;
     font-weight: 800;
-
 }
 
 .wrapper .input-box {
     width: 100%;
     height: 50px;
-
     margin: 30px 0px;
+    position: relative;
 }
 
 .input-box input {
@@ -250,11 +332,6 @@ body {
     font-size: 16px;
     color: #fff;
     padding: 20px 45px 20px 20px;
-
-}
-
-.input-box {
-    position: relative;
 }
 
 .input-box input::placeholder {
@@ -263,12 +340,10 @@ body {
 
 .input-box i {
     position: absolute;
-
     right: 20px;
     top: 50%;
     transform: translateY(-50%);
     font-size: 20px;
-
 }
 
 .wrapper .remember-forgot {
@@ -276,17 +351,14 @@ body {
     justify-content: space-between;
     font-size: 14.5px;
     margin: -15px 0 15px;
-
 }
 
 .remember-forgot label input {
     accent-color: #ffffff;
     margin-right: 3px;
-
 }
 
 .remember-forgot a {
-
     color: #fff;
     text-decoration: none;
     margin-right: 5px;
@@ -315,7 +387,6 @@ body {
     font-size: 14.5px;
     text-align: center;
     margin: 20px 0 15px;
-
 }
 
 .register-link p a {
@@ -330,86 +401,58 @@ body {
     text-decoration: underline;
 }
 
-@media (max-width: 600px) {
-    .pstt {
-        position: absolute;
-        top: 15;
-        right: 0;
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
     }
-
-    .pstt-img {
-        width: 30vw;
-        height: 50vh;
-
+    .Instructions h2 {
+        font-size: 5vw;
     }
-
+    .scroll-instruction {
+        font-size: 4vw;
+    }
     .gotoaccounts {
         flex-direction: column;
-        /* Stack elements vertically */
         text-align: center;
         padding: 15px;
     }
+    .getting-started-btn {
+        font-size: 3vw;
+        padding: 8px 8px;
+        margin-top: 10px;
+    }
+    .next-content {
+        width: 90vw;
+        margin: 20px auto;
+        font-size: 18px;
+    }
+    .pstt-img {
+        width: 27vw;
+        height: 50vh;
+    }
+}
 
+@media (max-width: 600px) {
+    .pstt-img {
+        width: 30vw;
+        height: 50vh;
+    }
+    .gotoaccounts {
+        flex-direction: column;
+        text-align: center;
+        padding: 15px;
+    }
     .getting-started-btn {
         font-size: 3vw;
         padding: 8px 16px;
         margin-top: 20px;
     }
-
-    .getting-started-btn:hover {
-        text-decoration: underline;
-        cursor: pointer;
-    }
-
     .next-content {
-        /* background-color: pink; */
-        width: 500px;
-        margin: 30px;
-        font-size: 20px;
-    }
-}
-
-@media (max-width: 758px) {
-    .pstt {
-        position: absolute;
-        top: 15;
-        right: 0;
-    }
-
-    .pstt-img {
-        width: 27vw;
-        height: 50vh;
-    }
-    .Instructions h2{
-        font-size: 5vw;
-    }
-    .scroll-instruction{
-        font-size: 4vw;
-    }
-    .gotoaccounts {
-        flex-direction: column;
-        /* Stack elements vertically */
-        text-align: center;
-        padding: 15px;
-    }
-
-    .getting-started-btn {
-        font-size: 3vw;
-        padding: 8px 8px;
-        margin-top: 10px;
-        padding: 8px;
-    }
-
-    .getting-started-btn:hover {
-        text-decoration: underline;
-        cursor: pointer;
-    }
-
-    .next-content {
-        /* background-color: pink; */
-        width: 500px;
-        margin: 30px;
-        font-size: 20px;
+        width: 90vw;
+        margin: 20px auto;
+        font-size: 16px;
     }
 }
 
@@ -418,24 +461,20 @@ body {
         width: 95%;
         padding: 10px;
     }
-
     .getting-started-btn {
-
         font-size: 16px;
         width: 100%;
-        /* Full-width button on small screens */
         padding: 8px;
     }
 }
 
-/* element mei dalengi yeh property
+/* 
+Animation usage example:
 animation-duration:3s;
 animation-name: ;
 animation-timing-function: ease-in-out;
 animation-delay:1s;
-animation-interation-count:infinite;
+animation-iteration-count:infinite;
 animation-direction:alternate;
-animation: 3s spin easy-in-out 1s infinite alternate; */
-/* .element:hover{
-    animation-play-state: running;
-} */
+animation: 3s spin ease-in-out 1s infinite alternate;
+*/
