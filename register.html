@@ -31,7 +31,15 @@
             border-radius: 10px;
             z-index: 5;
         }
-
+        .input-box .bi {
+    position: absolute;
+    right: 45px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
+    cursor: pointer;
+    color: white;
+}
         .profile-container img {
             z-index: 5;
             width: 40px;
@@ -76,12 +84,12 @@
             </div>
             <div class="input-box">
                 <input type="password" placeholder="Password" id="password" required>
-                <i class='bi bi-eye ' id="togglePassword" ></i> 
+                <i class='bi bi-eye-slash' id="togglePassword"></i> 
                 <i class='bx bxs-lock-open-alt'></i>
             </div>
             <div class="input-box">
                 <input type="password" placeholder="Confirm Password" id="confirm-password" required>
-                <i class='bi bi-eye ' id="toggleConfirmPassword" ></i> 
+                <i class='bi bi-eye-slash' id="toggleConfirmPassword"></i> 
                 <i class='bx bxs-lock-alt'></i>
                 
             </div>
@@ -123,15 +131,23 @@
         const confirmPassword = document.querySelector('#confirm-password');
 
         togglePassword.addEventListener('click', function (e) {
-            // toggle the type attribute for password field
+            // Toggle password visibility
             const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
             password.setAttribute('type', type);
+            
+            // Toggle icon
+            this.classList.toggle('bi-eye');
+            this.classList.toggle('bi-eye-slash');
         });
 
         toggleConfirmPassword.addEventListener('click', function (e) {
-            // toggle the type attribute for confirm password field
+            // Toggle password visibility
             const type = confirmPassword.getAttribute('type') === 'password' ? 'text' : 'password';
             confirmPassword.setAttribute('type', type);
+            
+            // Toggle icon
+            this.classList.toggle('bi-eye');
+            this.classList.toggle('bi-eye-slash');
         });
         // 🔹 Form Submission Event Listener
         document.querySelector("#register-form").addEventListener("submit", async (e) => {
