@@ -112,7 +112,7 @@
 <script>
   auth.onAuthStateChanged(user => {
     if (user) {
-      console.log("User logged in:", user.email);
+      console.log("User logged in:", user.displayName); // Log username instead of email
 
       const existingBox = document.getElementById('profile-box');
       if (existingBox) existingBox.remove();
@@ -149,24 +149,28 @@
       const userInfo = document.createElement('div');
       userInfo.style.display = 'flex';
       userInfo.style.flexDirection = 'column';
+      userInfo.style.gap = '5px'; // Add gap between elements
 
       const welcomeText = document.createElement('span');
       welcomeText.textContent = 'Welcome';
       welcomeText.style.fontSize = '14px';
       welcomeText.style.opacity = '0.7';
+
       const usernameText = document.createElement('span');
-      usernameText.textContent = user.displayName || 'User';  // Changed from user.email
+      usernameText.textContent = user.displayName || 'User';
       usernameText.style.fontWeight = '600';
       usernameText.style.fontSize = '16px';
       usernameText.style.wordBreak = 'break-word';
+
       const emailText = document.createElement('span');
       emailText.textContent = user.email;
-      emailText.style.fontWeight = '600';
-      emailText.style.fontSize = '16px';
+      emailText.style.fontSize = '12px';
+      emailText.style.opacity = '0.7';
       emailText.style.wordBreak = 'break-word';
       
       userInfo.appendChild(welcomeText);
-      userInfo.appendChild(emailText);
+      userInfo.appendChild(usernameText); // Add username
+      userInfo.appendChild(emailText);    // Add email
       profileBox.appendChild(avatar);
       profileBox.appendChild(userInfo);
       document.body.appendChild(profileBox);
