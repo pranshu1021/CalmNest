@@ -173,7 +173,8 @@
                 await updateProfile(userCredential.user, {
                     displayName: username
                 });
-                // 🔹 Save Additional User Info in Firestor
+
+                // 🔹 Save Additional User Info in Firestore
                 await setDoc(doc(db, "users", userCredential.user.uid), {
                     username: username,
                     email: email,
