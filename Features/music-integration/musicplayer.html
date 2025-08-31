@@ -180,13 +180,13 @@
 <script>
   auth.onAuthStateChanged(user => {
     if (user) {
-      console.log("User logged in:", user.email);
+      console.log("User logged in:", user.displayName); // Log username instead of email
 
-      // Check if profile box already exists, remove if yes
       const existingBox = document.getElementById('profile-box');
       if (existingBox) existingBox.remove();
+      const gotoaccounts = document.querySelector('.gotoaccounts');
+      if (gotoaccounts) gotoaccounts.style.display = 'none';
 
-      // Create profile box container
       const profileBox = document.createElement('div');
       profileBox.id = 'profile-box';
       profileBox.style.position = 'fixed';
@@ -205,7 +205,6 @@
       profileBox.style.minWidth = '250px';
       profileBox.style.gap = '15px';
 
-      // Updated Dicebear avatar URL
       const avatar = document.createElement('img');
       avatar.src = `https://api.dicebear.com/6.x/bottts/svg?seed=${encodeURIComponent(user.email)}`;
       avatar.alt = 'User Avatar';
@@ -215,38 +214,41 @@
       avatar.style.objectFit = 'cover';
       avatar.style.border = '2px solid #f39c12';
 
-      // User email text container
       const userInfo = document.createElement('div');
       userInfo.style.display = 'flex';
       userInfo.style.flexDirection = 'column';
+      userInfo.style.gap = '5px'; // Add gap between elements
 
       const welcomeText = document.createElement('span');
       welcomeText.textContent = 'Welcome';
       welcomeText.style.fontSize = '14px';
       welcomeText.style.opacity = '0.7';
 
+      const usernameText = document.createElement('span');
+      usernameText.textContent = user.displayName || 'User';
+      usernameText.style.fontWeight = '600';
+      usernameText.style.fontSize = '16px';
+      usernameText.style.wordBreak = 'break-word';
+
       const emailText = document.createElement('span');
       emailText.textContent = user.email;
-      emailText.style.fontWeight = '600';
-      emailText.style.fontSize = '16px';
+      emailText.style.fontSize = '12px';
+      emailText.style.opacity = '0.7';
       emailText.style.wordBreak = 'break-word';
-
-      // Append text spans to user info div
+      
       userInfo.appendChild(welcomeText);
-      userInfo.appendChild(emailText);
-
-      // Append avatar and userInfo to profile box
+      userInfo.appendChild(usernameText); // Add username
+      userInfo.appendChild(emailText);    // Add email
       profileBox.appendChild(avatar);
       profileBox.appendChild(userInfo);
-
-      // Add profile box to body
       document.body.appendChild(profileBox);
 
     } else {
       console.log("No user logged in");
-      // Optionally remove profile box if exists
       const existingBox = document.getElementById('profile-box');
       if (existingBox) existingBox.remove();
+      const gotoaccounts = document.querySelector('.gotoaccounts');
+        if (gotoaccounts) gotoaccounts.style.display = 'block';
     }
   });
 </script>
