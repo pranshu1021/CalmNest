@@ -15,11 +15,7 @@
 
 .card {
     backdrop-filter: blur(5px);
-    /* animation-name: enlarge-card;
-    animation-duration: 3s;
-    animation-play-state: paused;
-    animation-timing-function: ease-in-out;
-    animation-fill-mode: forwards; */
+
     transition: transform 0.3s ease-in-out;
     z-index: 7;
 }
@@ -35,9 +31,9 @@
     margin: 60px auto 50px auto;  Center horizontally */
     margin: 0 auto 50px auto;
     display: flex;
-    margin-left: 3vw;
+    
     margin-top: 5vw;
-    margin-right: 3vw;
+  
     max-width: 1500px;
     padding: 50px 50px;
     /* background-color: aqua; */
@@ -384,7 +380,12 @@ body {
         width: 27vw;
         height: 50vh;
     }
-
+    .Instructions h2{
+        font-size: 5vw;
+    }
+    .scroll-instruction{
+        font-size: 4vw;
+    }
     .gotoaccounts {
         flex-direction: column;
         /* Stack elements vertically */

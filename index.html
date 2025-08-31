@@ -7,71 +7,53 @@
     <title>CalmNest: Stay Cool</title>
     <link rel="stylesheet" href="style.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-
-<script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-app-compat.js"></script>
-<script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-auth-compat.js"></script>
-<script src="firebase-init.js"></script>
-<link rel="icon" type="image/png" href="/img/Logo.png">
-
-
-
+    <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-auth-compat.js"></script>
+    <script src="firebase-init.js"></script>
+    <link rel="icon" type="image/png" href="/img/Logo.png">
     <style>
         body {
             background-image: url(img/home-page-image1.jpg );
-
             justify-content: center;
             align-items: center;
             min-height: 100vh;
             background-repeat: no-repeat;
             background-attachment: fixed;
-
             background-size: cover;
             background-position: center;
         }
-
         * {
             margin: 0px;
             padding: 0px;
             box-sizing: border-box;
         }
-
-
-
         .card-container {
             display: flex;
             gap: 50px;
             justify-content: center;
             flex-wrap: wrap;
             margin-top: 10px;
-            /* background-color: blue; */
 
             padding: 50px 10px 12px;
         }
-
         .card {
             width: 325px;
-            /* background-color: #00ff22; */
             border-radius: 8px;
             overflow: hidden;
             box-shadow: 0px 2px 4px rgba(0, 0, 0, .2);
             cursor: pointer;
         }
-
         .blur-box {
             padding: 15px;
             backdrop-filter: blur(4px);
         }
-
         .scroll-instruction {
             font-size: 26px;
             color: white;
         }
-
         .card a {
             text-decoration: none;
-
         }
-
         /* Global Reset */
         html,
         body {
@@ -82,14 +64,10 @@
             grid-template-rows: auto 1fr auto;
             font-family: 'Poppins', sans-serif;
         }
-
-        /* Main Content */
         main {
             flex: 1;
             padding: 20px;
         }
-
-        /* Footer Styles */
         footer {
             width: 100vw;
             background: none;
@@ -98,8 +76,6 @@
             text-align: center;
             padding: 20px 0;
         }
-
-        /* Footer Container */
         .footer-container {
             display: flex;
             justify-content: space-around;
@@ -108,57 +84,43 @@
             max-width: vw;
             margin: 0 auto;
         }
-
-        /* Footer Logo */
         .footer-logo h2 {
             font-size: 24px;
             margin-bottom: 10px;
         }
-
         .footer-logo p {
             font-size: 14px;
             color: #bdc3c7;
         }
-
-        /* Footer Links */
         .footer-links h3,
         .footer-social h3 {
             font-size: 18px;
             margin-bottom: 15px;
         }
-
         .footer-links ul {
             list-style: none;
             padding: 0;
         }
-
         .footer-links ul li {
             margin: 8px 0;
         }
-
         .footer-links ul li a {
             color: #ecf0f1;
             text-decoration: none;
             transition: color 0.3s ease-in-out;
         }
-
         .footer-links ul li a:hover {
             color: #f39c12;
         }
-
-        /* Social Media Links */
         .footer-social a {
             font-size: 20px;
             margin: 0 10px;
             color: #ecf0f1;
             transition: color 0.3s ease-in-out;
         }
-
         .footer-social a:hover {
             color: #f39c12;
         }
-
-        /* Footer Bottom Section */
         .footer-bottom {
             text-align: center;
             padding: 4px 0;
@@ -167,15 +129,12 @@
             margin-top: 20px;
             margin-bottom: 0;
         }
-
-        /* Responsive Design */
         @media (max-width: 768px) {
             .footer-container {
                 flex-direction: column;
                 align-items: center;
             }
         }
-
         ::-webkit-scrollbar {
             display: none;
         }
@@ -195,14 +154,7 @@
                 <h2>BEING A STUDENT OR A WORKER CAN BE TIRING...</h2>
                 <h2>BUT YOU CAN RELAX HERE.</h2>
                 <p class="scroll-instruction">Scroll... down to see what appeals you and helps you to calm down.</p>
-
             </div>
-            <div class="starting-content-img">
-                <!-- <img class="starting-img" src="./img/BOY.jpg"> -->
-
-            </div>
-
-
         </div>
         <div class="card-container">
             <div class="blur-box">
@@ -212,8 +164,7 @@
                         <div class="card-content">
                             <h3>Hang-out with Friends</h3>
                             <p>Enjoying music and vibing together with friends, sharing the moment and feeling the
-                                rhythm. A
-                                perfect way to relax and connect. </p>
+                                rhythm. A perfect way to relax and connect. </p>
                         </div>
                     </a>
                 </div>
@@ -252,53 +203,27 @@
                 </div>
             </div>
         </div>
-
-
-
-        <!-- <a href="login.html"><button class="btn1">Hey CLICK ME</button></a> -->
         <div class="gotoaccounts">
             <div class="next-content">
                 <p> If You want to experience these features head over to the next page, Click on Login / Register
                     button.</p>
             </div>
             <a href="login.html"><button class="getting-started-btn">Login / Register</button></a>
-
-
         </div>
-        <!-- <div class="views-counter">
-            <p>This page is visited</p>
-            <p>Views: <span id="viewCount">0</span></p>
-            <p>times.</p>
-        </div> -->
     </div>
-
-    <!--<div class="pstt">
-        <img class="pstt-img" src="img/pstt.png" alt="pstt">
-    </div>  -->
-    <!-- <script>
-            fetch("https://api.countapi.xyz/hit/CalmNest/views") 
-            .then(response => response.json())
-            .then(data => {
-                document.getElementById("viewCount").innerText = data.value;
-            });
-    </script> -->
     <footer>
         <div class="footer-container">
             <div class="footer-logo">
                 <h2>Fineworks Pvt. Ltd</h2>
                 <p>Crafting Excellence, Delivering Perfection</p>
             </div>
-
             <div class="footer-links">
                 <h3>Quick Link</h3>
                 <ul>
                     <li><a href="#about">About</a></li>
-                   
                     <li>Contact: <i class='bx bxl-gmail' style='color:#ffffff' ></i>  pranshugupta1423@gmail.com</li>
-                  
                 </ul>
             </div>
-
             <div class="footer-social">
                 <h3>Follow Us</h3>
                 <a href="https://www.facebook.com/profile.php?id=61574224292227&sk=about"><i class='bx bxl-facebook-square' style='color:#ffffff' ></i></a>
@@ -307,7 +232,6 @@
                 <a href="https://www.youtube.com/@Fineworks_main"><i class='bx bxl-youtube' style='color:#ffffff' ></i></a>
             </div>
         </div>
-
         <div class="footer-bottom">
             <p>© 2025 Fineworks Pvt. Ltd. All Rights Reserved.</p>
         </div>
@@ -389,9 +313,5 @@
     }
   });
 </script>
-
-
-    
 </body>
-
 </html>
