@@ -24,9 +24,6 @@ body {
     background-attachment: fixed;
     background-size: cover;
     background-position: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 ::-webkit-scrollbar {
@@ -158,6 +155,7 @@ body {
 
 .wrapper-homepage {
     margin-top: 70px;
+    padding-top: 80px; /* Add this line */
 }
 
 .wrapper-homepage h3 {
@@ -457,6 +455,19 @@ footer {
 }
 
 @media (max-width: 480px) {
+    .card-container {
+        flex-direction: column;
+        gap: 20px;
+        padding: 10px;
+    }
+    .card {
+        width: 100%;
+        max-width: 350px;
+        margin: 0 auto;
+    }
+    .wrapper-homepage {
+        padding-top: 100px;
+    }
     .gotoaccounts {
         width: 95%;
         padding: 10px;
