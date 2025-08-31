@@ -149,15 +149,22 @@
       const userInfo = document.createElement('div');
       userInfo.style.display = 'flex';
       userInfo.style.flexDirection = 'column';
+
       const welcomeText = document.createElement('span');
       welcomeText.textContent = 'Welcome';
       welcomeText.style.fontSize = '14px';
       welcomeText.style.opacity = '0.7';
+      const usernameText = document.createElement('span');
+      usernameText.textContent = user.displayName || 'User';  // Changed from user.email
+      usernameText.style.fontWeight = '600';
+      usernameText.style.fontSize = '16px';
+      usernameText.style.wordBreak = 'break-word';
       const emailText = document.createElement('span');
       emailText.textContent = user.email;
       emailText.style.fontWeight = '600';
       emailText.style.fontSize = '16px';
       emailText.style.wordBreak = 'break-word';
+      
       userInfo.appendChild(welcomeText);
       userInfo.appendChild(emailText);
       profileBox.appendChild(avatar);
