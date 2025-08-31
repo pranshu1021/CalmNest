@@ -384,6 +384,8 @@
       // Optionally remove profile box if exists
       const existingBox = document.getElementById('profile-box');
       if (existingBox) existingBox.remove();
+      const gotoaccounts = document.querySelector('.gotoaccounts');
+        if (gotoaccounts) gotoaccounts.style.display = 'block';
     }
   });
 </script>
