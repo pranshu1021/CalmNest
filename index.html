@@ -320,6 +320,8 @@
       // Check if profile box already exists, remove if yes
       const existingBox = document.getElementById('profile-box');
       if (existingBox) existingBox.remove();
+      const gotoaccounts = document.querySelector('.gotoaccounts');
+      if (gotoaccounts) gotoaccounts.style.display = 'none';
 
       // Create profile box container
       const profileBox = document.createElement('div');
